@@ -13,8 +13,6 @@ struct Node {
 template<class T>
 class Stack {
 	public:
-		static const size_t CAPACITY = 50;
-
 		Stack();
 		~Stack();
 		/**
@@ -43,6 +41,7 @@ class Stack {
 		void printElements() const;
 
 	private:
+		static const size_t CAPACITY = 50;
 		Node<T> *top;
 		size_t length;
 };

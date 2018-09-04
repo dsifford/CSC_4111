@@ -16,8 +16,8 @@ all: installdirs main
 .PHONY: docker
 docker:
 	@ docker rmi $(shell docker images -q --filter dangling=true) || true
-	@ docker build -t dsifford/lab01_task01 -f ../../Dockerfile .
-	@ docker run --rm -it dsifford/lab01_task01
+	@ docker build -t dsifford/lab01_task02 -f ../../Dockerfile .
+	@ docker run --rm -it dsifford/lab01_task02
 
 .PHONY: installdirs
 installdirs: 
