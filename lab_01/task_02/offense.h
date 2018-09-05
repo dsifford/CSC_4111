@@ -7,12 +7,12 @@
 
 class Offense: public Player {
 	public:
-		int yards;
 		Offense(string name);
 		void setMinutesPlayed(int minutes);
 		void setYards(int yards);
 		void printStats() const;
 	private:
+		int yards;
 		string name;
 };
 

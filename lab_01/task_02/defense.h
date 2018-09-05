@@ -6,12 +6,12 @@
 
 class Defense: public Player {
 	public:
-		int tackles;
 		Defense(string name);
-		void setMinutes(int minutes);
-		void setTackles(int tackles);
 		void printStats() const;
+		void setMinutesPlayed(int minutes);
+		void setTackles(int tackles);
 	private:
+		int tackles;
 		string name;
 };
 
