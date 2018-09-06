@@ -2,16 +2,16 @@
 
 #include "defense.h"
 
-Defense::Defense(string n) : Player(n) {
+Defense::Defense(string n): Player(n) {
 	name = n;
 };
 
 void Defense::printStats() const {
-	std::cout << "Name: " << name 
-			  << "\tNumber: " << number 
-			  << "\tMinutes: " << minutes 
-			  << "\tTackles: " << tackles
-			  << std::endl;
+	std::cout << "Name: " << name
+	          << "\tNumber: " << number
+	          << "\tMinutes: " << minutes
+	          << "\tTackles: " << tackles
+	          << std::endl;
 }
 
 void Defense::setMinutesPlayed(int mins) {
@@ -21,4 +21,3 @@ void Defense::setMinutesPlayed(int mins) {
 void Defense::setTackles(int tackleNum) {
 	tackles = tackleNum;
 };
-

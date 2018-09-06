@@ -1,7 +1,6 @@
-
 #include "offense.h"
 
-Offense::Offense(string n) : Player(n) {
+Offense::Offense(string n): Player(n) {
 	name = n;
 };
 
@@ -14,9 +13,9 @@ void Offense::setYards(int yrds) {
 }
 
 void Offense::printStats() const {
-	std::cout << "Name: " << name 
-			  << "\tNumber: " << number 
-			  << "\tMinutes: " << minutes 
-			  << "\tYards: " << yards
-			  << std::endl;
+	std::cout << "Name: " << name
+	          << "\tNumber: " << number
+	          << "\tMinutes: " << minutes
+	          << "\tYards: " << yards
+	          << std::endl;
 }
