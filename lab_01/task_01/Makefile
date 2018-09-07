@@ -6,6 +6,7 @@ CXXFLAGS = -std=c++11 $(DEBUG)
 
 libdir = lib
 bindir = bin
+docker_tag = dsifford/lab01_task01
 
 targets = $(filter-out main,$(patsubst %.cpp, %, $(wildcard *.cpp)))
 headers = $(wildcard *.h)
@@ -15,15 +16,15 @@ all: installdirs main
 
 .PHONY: docker
 docker:
-	@ docker rmi $(shell docker images -q --filter dangling=true) || true
-	@ docker build -t dsifford/lab01_task01 -f ../../Dockerfile .
-	@ docker run --rm -it dsifford/lab01_task01
+	@ docker rmi $(shell docker images -q --filter dangling=true) 2>/dev/null || true
+	@ docker build -t $(docker_tag) -f ../../Dockerfile .
+	@ docker run --rm -it $(docker_tag)
 
 .PHONY: installdirs
 installdirs: 
 	@ mkdir -p $(bindir) $(libdir)
 
-main: $(libdir)/$(targets:=.o) $(headers)
+main: $(targets:%=$(libdir)/%.o) $(headers)
 	$(CC) $(CXXFLAGS) $? $@.cpp -o $(bindir)/$@
 
 $(libdir)/%.o: %.cpp $(headers)
