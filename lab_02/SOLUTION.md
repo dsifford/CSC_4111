@@ -20,3 +20,48 @@ this exercise.
 
 ## Task 2
 
+In the remainder of this document, I'll be comparing the main similarities and
+differences between git, subversion, and mercurial.
+
+### High Level Differences
+
+For the naive user, git and mercurial are the most similar to each other in
+terms of use and functionality. Both operate using a decentralized approach
+(each user has their own copy of the repository and the "source of truth" exists
+instead using a robust metadata system).
+
+Subversion, however, does not work this way. With subversion, there exists only
+one centralized "main" repository that acts as a source of truth. Whenever a
+user "checks in" their changes in svn, all users get the changes.
+
+Additionally, git and mercurial track individual byte-level changes to
+individual files explicitly, whereas subversion tracks entire file revisions. As
+such, this makes the history much larger overall and tends to make new checkouts
+take longer (sometimes extremely so).
+
+### Layout Differences
+
+Again, git and mercurial tend to be most similar here. Both tend to be out of
+the developer's way and store all their business logic in hidden directories.
+
+Subversion is an absolute disaster in this aspect. If one wanted to use
+subversion, you'd need to adapt their directory structure where, at the svn
+root, there are three folders: `trunk`, `branches`, and `tags`.
+
+The trunk in svn is the main line of development and the absolute source of
+truth. The tags and branches directories hold tagged code and branches
+separately from the main repository. This is the single biggest reason why I
+dislike and will never choose to use svn.
+
+### Workflow Differences
+
+Finally, below are a quick comparison of the common workflow commands between
+git, mercurial, and subversion.
+
+| Task                                    | Git                       | Mercurial                | Subversion                                    |
+| --------------------------------------- | ------------------------- | ------------------------ | --------------------------------------------- |
+| Create a new repository                 | `git init`                | `hg init`                | N/A (must import from server)                 |
+| Copy remote repository to local machine | `git clone <url>`         | `hg clone <url>`         | `svn checkout <url>`                          |
+| Add changes to staging                  | `git add <file>`          | `hg add <file>`          | `svn add <file>`                              |
+| Commit changes                          | `git commit -m <message>` | `hg commit -m <message>` | `svn commit` (**Warning!** This also pushes!) |
+| Push changes to remote                  | `git push`                | `hg push`                | N/A (commit does this)                        |
