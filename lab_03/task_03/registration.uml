@@ -1,0 +1,25 @@
+@startuml
+|Student|
+start
+    while(Is there a GREEN CHECK in the status column of your desired class?) is (no)
+        : Navigate to "university.edu";
+        : Select "my classes";
+        while (Have you selected your desired class?) is (no)
+            : Enter subject code manually or click "select subject" to choose from a list of subjects;
+            : Locate desired class from the list and and click "select class";
+        endwhile (yes)
+        : Review and submit the selected class;
+
+|University|
+        if (Are there any errors in the submission?) then (no)
+            : Return GREEN CHECK;
+        else (yes)
+            : Return RED X;
+        endif
+
+|Student|
+        : Review response;
+    endwhile (yes)
+        : Registration completed successfully;
+stop
+@enduml

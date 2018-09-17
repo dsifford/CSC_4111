@@ -1,0 +1,36 @@
+@startuml
+
+Contact <|.. Professor
+Contact <|.. Student
+
+Student <|.. ForeignExchangeStudent
+Bonus o.. Professor
+
+interface Contact {
+    +firstName: String
+    +lastName: String
+}
+
+class Bonus {
+    +bonusPerYear: Dollars
+    +baseSalary: Dollars
+    +extraWorkingHours: int
+    +calculateBonus(): Dollars
+}
+
+class Dollars
+
+class ForeignExchangeStudent {
+    +country: String
+    +availabilityHours: int
+    +scheduleFinal(): String
+}
+
+class Professor
+
+class Student {
+    +major: String
+}
+
+@enduml
+

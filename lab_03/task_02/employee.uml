@@ -1,0 +1,34 @@
+@startuml
+
+Employee <|.. FullTimeEmployee
+Employee <|.. PartTimeEmployee
+
+enum Gender {
+    MALE
+    FEMALE
+}
+
+abstract class Employee {
+    +name: String
+    +birthday: Date
+    +address: String
+    +gender: Gender
+    +printContactDetails(): void
+}
+
+class FullTimeEmployee {
+    +salary: int
+    +bonus: int
+    +printMonthlySalary(): void
+    +printEmployeeDetails(): void
+}
+
+class PartTimeEmployee {
+    +workingHours: int
+    +hourlySalary: int
+    +partialBonus: int
+    +calculateMonthlySalary(): int
+    +calculatePartialBonus(): int
+}
+
+@enduml
