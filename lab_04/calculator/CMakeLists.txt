@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
  
-project(QtTest)
+project(Calculator)
 
 if(APPLE AND EXISTS /usr/local/opt/qt5)
 	# Homebrew installs Qt5 (up to at least 5.9.1) in
@@ -15,26 +15,21 @@ add_definitions(${QT_DEFINITIONS})
  
 # support for out-of-source build
 include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR} #this is where ui_SimpleViewUI.h is generated
+  ${CMAKE_CURRENT_BINARY_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}
   (${Qt5Widgets_INCLUDE_DIRS})
 )
  
 # Set your files and resources here
-set(SimpleViewSrcs main.cpp qtprogramwin.cpp)
-set(SimpleViewUI qtprogramwin.ui)
-set(SimpleViewHeaders qtprogramwin.h)
+set(SimpleViewSrcs main.cpp calculator.cpp)
+set(SimpleViewUI calculator.ui)
+set(SimpleViewHeaders calculator.h)
  
 qt5_wrap_ui(UISrcs ${SimpleViewUI})
-qt5_wrap_cpp(MOCSrcs ${SimpleViewHeaders} )
+qt5_wrap_cpp(MOCSrcs ${SimpleViewHeaders})
  
-source_group("Resources" FILES
-  ${SimpleViewUI}
-)
- 
-source_group("Generated" FILES
-  ${UISrcs}
-  ${MOCSrcs}
-)
-add_executable( QtTest ${SimpleViewSrcs} ${UISrcs} ${MOCSrcs} ${SimpleViewHeaders} )
-target_link_libraries( QtTest ${Qt5Widgets_LIBRARIES})
+source_group("Resources" FILES ${SimpleViewUI})
+source_group("Generated" FILES ${UISrcs} ${MOCSrcs})
+
+add_executable(Calculator ${SimpleViewSrcs} ${UISrcs} ${MOCSrcs} ${SimpleViewHeaders})
+target_link_libraries(Calculator ${Qt5Widgets_LIBRARIES})

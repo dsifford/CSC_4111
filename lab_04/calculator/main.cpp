@@ -1,9 +1,9 @@
-#include "qtprogramwin.h"
+#include "calculator.h"
 #include <QApplication>
 
 int main(int argc, char *argv []) {
 	QApplication a(argc, argv);
-	QtProgramWin w;
+	Calculator w;
 	w.show();
 
 	return a.exec();
