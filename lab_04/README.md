@@ -29,7 +29,7 @@ The following are the requirements you shall meet in your calculator:
         previous results. (50 points, 10 points each).
 -   [x] All operators should be supported by both buttons on the program and the
         keyboard (5 points)
--   [ ] Calculator GUI shall be developed in Windows with Qt framework and
+-   [x] Calculator GUI shall be developed in Windows with Qt framework and
         Visual Studio 2017. Use QtHelloWorld project as your base. (5 points)
 
 # Part 2 Short Documentation (20 points)
