@@ -3,4 +3,6 @@ bin
 build
 *.zip
 *.pdf
+*.odt
+*.docx
 EasyPaint

@@ -1,0 +1,19 @@
+@startuml
+
+skinparam class {
+	BackgroundColor<<Propagating>> SandyBrown
+	FontColor<<Propagating>> OrangeRed
+
+	BackgroundColor<<Located>> LightCoral
+	FontColor<<Located>> Red
+}
+
+MainWindow o-- ImageArea
+ImageArea *-- AdditionalTools
+
+class AdditionalTools <<Located>>
+class ImageArea <<Propagating>>
+class MainWindow <<Propagating>>
+
+@enduml
+
