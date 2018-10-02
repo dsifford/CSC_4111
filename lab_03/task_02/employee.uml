@@ -1,7 +1,7 @@
 @startuml
 
-Employee <|.. FullTimeEmployee
-Employee <|.. PartTimeEmployee
+Employee <|-- FullTimeEmployee
+Employee <|-- PartTimeEmployee
 
 enum Gender {
     MALE

@@ -3,8 +3,8 @@
 Contact <|.. Professor
 Contact <|.. Student
 
-Student <|.. ForeignExchangeStudent
-Bonus o.. Professor
+Student <|-- ForeignExchangeStudent
+Bonus o-- Professor
 
 interface Contact {
     +firstName: String
