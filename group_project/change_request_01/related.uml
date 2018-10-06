@@ -1,0 +1,26 @@
+@startuml
+
+skinparam class {
+	BackgroundColor<<Propagating>> SandyBrown
+	FontColor<<Propagating>> OrangeRed
+
+	BackgroundColor<<Located>> LightCoral
+	FontColor<<Located>> Red
+}
+
+MainWindow --o ImageArea
+ImageArea --o AdditionalTools
+
+class MainWindow <<Propagating>> {
+	-getCurrentImageArea(): *ImageArea
+}
+
+class ImageArea <<Propagating>> {
+	+resizeCanvas(): void
+}
+
+class AdditionalTools <<Located>> {
+	+resizeCanvas(int width, int height, bool flag): void
+}
+
+@enduml
