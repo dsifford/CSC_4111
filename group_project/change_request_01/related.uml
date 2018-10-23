@@ -8,8 +8,8 @@ skinparam class {
 	FontColor<<Located>> Red
 }
 
-MainWindow --o ImageArea
-ImageArea --o AdditionalTools
+MainWindow o-- ImageArea
+ImageArea o-- AdditionalTools
 
 class MainWindow <<Propagating>> {
 	-getCurrentImageArea(): *ImageArea

@@ -8,8 +8,8 @@ skinparam class {
 	FontColor<<Impacted>> Red
 }
 
-MainWindow --o ImageArea
-ImageArea --o AdditionalTools
+MainWindow o-- ImageArea
+ImageArea o-- AdditionalTools
 
 class MainWindow <<Impacted>> {
 	-getCurrentImageArea(): *ImageArea
