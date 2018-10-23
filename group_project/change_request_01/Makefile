@@ -19,4 +19,4 @@ $(bindir)/%.svg: %.uml
 	@ cat $< | docker run --rm -i think/plantuml -tsvg > $@ 
 
 $(bindir)/%.pdf: %.md
-	@ pandoc -V geometry:landscape -f markdown_github+escaped_line_breaks -t latex -o $@ $<
+	@ pandoc --highlight-style breezedark -V geometry:landscape -f markdown_github+escaped_line_breaks -t latex -o $@ $<
