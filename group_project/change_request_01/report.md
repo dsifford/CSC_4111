@@ -259,5 +259,5 @@ index 8e4cd9e..a40dfc7 100644
      void rotateRightImageAct();
 ```
 
-[related_uml]: bin/related.svg
-[impact_uml]: bin/impact.svg
+[related_uml]: bin/related.png
+[impact_uml]: bin/impact.png

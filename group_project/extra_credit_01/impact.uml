@@ -1,0 +1,12 @@
+@startuml
+
+skinparam class {
+	BackgroundColor<<Impacted>> LightCoral
+	FontColor<<Impacted>> Red
+}
+
+class MainWindow <<Impacted>> {
+	-initializeTabWidget(): void
+}
+
+@enduml

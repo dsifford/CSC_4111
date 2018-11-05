@@ -1,0 +1,23 @@
+@startuml
+
+skinparam class {
+	BackgroundColor<<Impacted>> LightCoral
+	FontColor<<Impacted>> Red
+}
+
+MainWindow o-- ImageArea
+ImageArea o-- AdditionalTools
+
+class MainWindow <<Impacted>> {
+	-getCurrentImageArea(): *ImageArea
+}
+
+class ImageArea <<Impacted>> {
+	+flipImage(bool flag): void
+}
+
+class AdditionalTools <<Impacted>> {
+	+flipImage(bool flag): void
+}
+
+@enduml
