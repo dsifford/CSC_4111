@@ -54,24 +54,13 @@ Add at least three frequently used canvas sizes under `Menu->Tools`, e.g. `800*6
 | `imagearea.cpp`, `imagearea.h`   | Add method overload to `resizeCanvas` that allows for an explicit resize without opening a dialog. |          15 |             3 |          18 |
 | `mainwindow.cpp`, `mainwindow.h` | Add method overload to `resizeCanvasAct` that allows for passing explicit dimensions.              |          12 |             0 |          12 |
 
-```
-$ g diff --stat mainwindow* imagearea*
- Project/EasyPaintQt5/sources/imagearea.cpp  |  6 ++++++
- Project/EasyPaintQt5/sources/imagearea.h    | 12 +++++++++---
- Project/EasyPaintQt5/sources/mainwindow.cpp |  5 +++++
- Project/EasyPaintQt5/sources/mainwindow.h   |  7 +++++++
- 4 files changed, 27 insertions(+), 3 deletions(-)
-```
-
 ## 5. Actualization
 
 ### Table 5. Actualization Summary
 
-<!-- TODO: Not sure what this is even for -->
-
 | # Visited | # Changed | # Added | # Propagating | # Unchanged | # Added to Changed Set |
 | --------: | --------: | ------: | ------------: | ----------: | ---------------------: |
-|           |           |         |               |             |                        |
+|         2 |         2 |       0 |             1 |           0 |                      2 |
 
 ### Table 6. Actualization Code Files
 
@@ -80,38 +69,32 @@ $ g diff --stat mainwindow* imagearea*
 | `mainwindow.cpp` | Move current canvas resize action into submenu to facilitate explicit sizes.         |           4 |             4 |           8 |
 | `mainwindow.cpp` | `connect` the newly overloaded `resizeCanvasAct` to explicit actions in the submenu. |          16 |             0 |          16 |
 
-> **NOTE:** This same information can be obtained using git diff. Here it is below...
-
-```
-$ g diff --stat mainwindow.cpp
- Project/EasyPaintQt5/sources/mainwindow.cpp | 24 ++++++++++++++++++++----
- 1 file changed, 20 insertions(+), 4 deletions(-)
-```
-
 ## 6. Postfactoring
 
-N/A
+None
 
 ## 7. Verification
 
-<!-- TODO -->
-
-    Please provide a detailed journal entry describing how you went about
-    performing verification for this change request.
+After making my small changes, I verified that they worked as intended by compiling and running the program and exercising all of the new buttons manually. I also verified that the existing canvas functionality remained functional. I found no issues.
 
 ### Table 7. Statement Verification
 
-| File Name | Total Statements | Covered Statements |   % |
-| --------- | ---------------: | -----------------: | --: |
-|           |                  |                    |     |
+| File Name        | Total Statements | Covered Statements |   % |
+| ---------------- | ---------------: | -----------------: | --: |
+| `imagearea.cpp`  |                2 |                  2 | 100 |
+| `mainwindow.cpp` |               15 |                 15 | 100 |
 
 #### Tests Failed
 
+None
+
 #### Bugs Found
+
+None
 
 ## 8. Sources
 
-N/A
+None
 
 ## 9. Highlighted Source Code
 
