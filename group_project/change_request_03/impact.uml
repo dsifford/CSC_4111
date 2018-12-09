@@ -1,0 +1,10 @@
+@startuml
+
+skinparam class {
+	BackgroundColor<<Impacted>> LightCoral
+	FontColor<<Impacted>> Red
+}
+
+MainWindow <<Impacted>>
+
+@enduml
